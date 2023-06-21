@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "blf-scheduler",
+  "version": "${version}",
+  "name": "BLF Scheduler",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "LGPL-3.0",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "net.blumbo.blfscheduler.BlfScheduler"
+    ]
+  },
+  "mixins": [
+    "blf-scheduler.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "fabric": "*",
+    "minecraft": ">=1.20.1"
+  }
+}
