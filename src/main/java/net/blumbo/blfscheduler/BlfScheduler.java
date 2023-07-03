@@ -19,6 +19,12 @@ public class BlfScheduler implements ModInitializer {
     @Override
     public void onInitialize() {}
 
+    /**
+     * Runs a task after specified amount of ticks.
+     * @param delay Number of ticks before the task is run.
+     * @param runnable Task being run.
+     * @return Runnable specified as parameter.
+     */
     public static BlfRunnable delay(long delay, @NotNull BlfRunnable runnable) {
         delay = properDelayCheck(delay);
 
@@ -31,6 +37,13 @@ public class BlfScheduler implements ModInitializer {
         return runnable;
     }
 
+    /**
+     * Repeats a task every specified amount of ticks.
+     * @param delay Number of ticks before the first task is run.
+     * @param period Number of ticks between following runs.
+     * @param runnable Task being repeated.
+     * @return Runnable specified as parameter.
+     */
     public static BlfRunnable repeat(long delay, long period, @NotNull BlfRunnable runnable) {
         delay = properDelayCheck(delay);
 
