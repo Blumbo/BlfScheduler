@@ -28,7 +28,8 @@ public class BlfScheduler implements ModInitializer {
     public static BlfRunnable delay(long delay, @NotNull BlfRunnable runnable) {
         delay = properDelayCheck(delay);
 
-        runnable.cancelled = true;
+        runnable.isCancelled = false;
+        runnable.isRepeating = false;
         runnable.period = Integer.MAX_VALUE;
 
         long time = ticks + delay;
@@ -47,7 +48,8 @@ public class BlfScheduler implements ModInitializer {
     public static BlfRunnable repeat(long delay, long period, @NotNull BlfRunnable runnable) {
         delay = properDelayCheck(delay);
 
-        runnable.cancelled = false;
+        runnable.isCancelled = false;
+        runnable.isRepeating = true;
         runnable.period = period;
 
         long time = ticks + delay;
@@ -67,8 +69,9 @@ public class BlfScheduler implements ModInitializer {
     }
 
     private static void runCurrentTimeTask(BlfRunnable runnable) {
+        if (runnable.isCancelled) return;
         runnable.run();
-        if (runnable.cancelled) return;
+        if (runnable.isCancelled || !runnable.isRepeating) return;
 
         Long period = properPeriodCheck(runnable.period);
         if (period == null) return;
