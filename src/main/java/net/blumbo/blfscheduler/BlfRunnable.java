@@ -7,7 +7,7 @@ public abstract class BlfRunnable implements BlfTask {
     long period;
 
     /**
-     * Stops a repeating task.
+     * Stops the delayed or repeating task from running next time.
      */
     public void cancel() {
         this.isCancelled = true;

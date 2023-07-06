@@ -21,7 +21,7 @@ public class BlfScheduler implements ModInitializer {
 
     /**
      * Runs a task after specified amount of ticks.
-     * @param delay Number of ticks before the task is run.
+     * @param delay Number of ticks before the task is run. Should be at least 0.
      * @param runnable Task being run.
      * @return Runnable specified as parameter.
      */
@@ -40,8 +40,8 @@ public class BlfScheduler implements ModInitializer {
 
     /**
      * Repeats a task every specified amount of ticks.
-     * @param delay Number of ticks before the first task is run.
-     * @param period Number of ticks between following runs.
+     * @param delay Number of ticks before the first task is run. Should be at least 0.
+     * @param period Number of ticks between following runs. Should be at least 1.
      * @param runnable Task being repeated.
      * @return Runnable specified as parameter.
      */
