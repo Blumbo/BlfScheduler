@@ -1,4 +1,4 @@
-package net.blumbo.blfscheduler;
+package io.github.blumbo.blfscheduler;
 
 import com.mojang.logging.LogUtils;
 import net.fabricmc.api.ModInitializer;

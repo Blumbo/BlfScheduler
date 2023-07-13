@@ -10,7 +10,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.blumbo.blfscheduler.BlfScheduler"
+      "io.github.blumbo.blfscheduler.BlfScheduler"
     ]
   },
   "mixins": [

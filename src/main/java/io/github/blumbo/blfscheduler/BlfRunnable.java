@@ -1,4 +1,4 @@
-package net.blumbo.blfscheduler;
+package io.github.blumbo.blfscheduler;
 
 public abstract class BlfRunnable implements BlfTask {
 

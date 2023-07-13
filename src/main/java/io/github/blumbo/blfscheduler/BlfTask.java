@@ -1,4 +1,4 @@
-package net.blumbo.blfscheduler;
+package io.github.blumbo.blfscheduler;
 
 @FunctionalInterface
 interface BlfTask {
